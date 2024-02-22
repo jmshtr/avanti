@@ -87,15 +87,17 @@ while true do
     end
     
     -- Player input
-    io.write("Choose an option: ")
-    local choice = tonumber(io.read())
+    local choice = nil
+    repeat
+        io.write("Choose an option: ")
+        choice = tonumber(io.read())
+        if choice == nil or choice < 1 or choice > #rooms[currentRoom].options then
+            print("Invalid choice. Please choose a valid option.")
+        end
+    until choice ~= nil and choice >= 1 and choice <= #rooms[currentRoom].options
     
-    -- Validate input
-    if choice ~= nil and choice >= 1 and choice <= #rooms[currentRoom].options then
-        currentRoom = rooms[currentRoom].options[choice][2]
-    else
-        print("Invalid choice. Please choose a valid option.")
-    end
+    -- Move to the next room based on the player's choice
+    currentRoom = rooms[currentRoom].options[choice][2]
     
     -- Check for game over or win condition
     if currentRoom == 6 or currentRoom == 9 or currentRoom == 10 then

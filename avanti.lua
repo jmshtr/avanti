@@ -80,7 +80,7 @@ while true do
     print("You are in: " .. rooms[currentRoom].name)
     print(rooms[currentRoom].description)
     
-    -- Display options
+    -- Display Options
     print("Options:")
     for i, option in ipairs(rooms[currentRoom].options) do
         print(i .. ". " .. option[1])

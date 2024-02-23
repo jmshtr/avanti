@@ -1,4 +1,4 @@
--- Define rooms
+-- Define rooms (expanded)
 local rooms = {
     {
         name = "Forest",
@@ -69,6 +69,51 @@ local rooms = {
         name = "Escaped",
         description = "You manage to sneak past the dragon and escape the cave! You win!",
         options = {}
+    },
+    {
+        name = "Mountain Summit",
+        description = "You climb to the summit of a high mountain, with a breathtaking view.",
+        options = {
+            { "Go Downhill", 7 },
+            { "Explore Caves", 11 }
+        }
+    },
+    {
+        name = "Mysterious Caves",
+        description = "You find a network of mysterious caves. Each seems to lead to a different place.",
+        options = {
+            { "Enter Cave 1", 12 },
+            { "Enter Cave 2", 13 }
+        }
+    },
+    {
+        name = "Enchanted Forest",
+        description = "You enter an enchanted forest with magical creatures and glowing plants.",
+        options = {
+            { "Go Deeper into the Forest", 14 },
+            { "Go Back to the Riverbank", 3 }
+        }
+    },
+    {
+        name = "Hidden Clearing",
+        description = "You discover a hidden clearing with a peaceful pond and singing birds.",
+        options = {
+            { "Rest by the Pond", 15 },
+            { "Continue Exploring the Forest", 14 }
+        }
+    },
+    {
+        name = "Giant Spider's Lair",
+        description = "You stumble upon the lair of a giant spider! It's hungry.",
+        options = {
+            { "Fight the Spider", 16 },
+            { "Flee Back to the Forest", 14 }
+        }
+    },
+    {
+        name = "Victorious",
+        description = "You defeat the giant spider and emerge victorious!",
+        options = {}
     }
 }
 
@@ -100,7 +145,7 @@ while true do
     currentRoom = rooms[currentRoom].options[choice][2]
     
     -- Check for game over or win condition
-    if currentRoom == 6 or currentRoom == 9 or currentRoom == 10 then
+    if currentRoom == 6 or currentRoom == 9 or currentRoom == 15 or currentRoom == 16 then
         break
     end
 end

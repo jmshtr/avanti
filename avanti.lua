@@ -1,8 +1,12 @@
--- Define rooms (expanded)
+-- Define rooms with NPCs and dialogue
 local rooms = {
     {
         name = "Forest",
         description = "You find yourself in a dense forest. There are trees all around you.",
+        npc = {
+            name = "Wanderer",
+            dialogue = "Greetings traveler! I'm on a quest to find a lost city."
+        },
         options = {
             { "Go North", 2 },
             { "Go East", 3 }
@@ -105,6 +109,10 @@ local rooms = {
     {
         name = "Giant Spider's Lair",
         description = "You stumble upon the lair of a giant spider! It's hungry.",
+        npc = {
+            name = "Giant Spider",
+            dialogue = "Ssssssssstay away! Thisssss isssss my territory!"
+        },
         options = {
             { "Fight the Spider", 16 },
             { "Flee Back to the Forest", 14 }
@@ -125,6 +133,12 @@ while true do
     print("You are in: " .. rooms[currentRoom].name)
     print(rooms[currentRoom].description)
     
+    -- Display NPC dialogue (if NPC exists in the room)
+    if rooms[currentRoom].npc then
+        print("NPC: " .. rooms[currentRoom].npc.name)
+        print(rooms[currentRoom].npc.dialogue)
+    end
+
     -- Display Options
     print("Options:")
     for i, option in ipairs(rooms[currentRoom].options) do

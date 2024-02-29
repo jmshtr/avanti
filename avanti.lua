@@ -120,7 +120,27 @@ local rooms = {
     },
     {
         name = "Victorious",
-        description = "You defeat the giant spider and emerge victorious!",
+        description = "You emerge from the cave, victorious and laden with treasure!",
+        options = {}
+    },
+    {
+        name = "Defeated",
+        description = "You are defeated by the dragon's fiery breath. Game over.",
+        options = {}
+    },
+    {
+        name = "Escaped",
+        description = "You manage to escape the dragon's lair, battered but alive.",
+        options = {}
+    },
+    {
+        name = "Eaten",
+        description = "The giant spider catches you in its web and devours you. Game over.",
+        options = {}
+    },
+    {
+        name = "Survived",
+        description = "You narrowly escape the spider's lair, shaken but alive.",
         options = {}
     }
 }
@@ -159,7 +179,20 @@ while true do
     currentRoom = rooms[currentRoom].options[choice][2]
     
     -- Check for game over or win condition
-    if currentRoom == 6 or currentRoom == 9 or currentRoom == 15 or currentRoom == 16 then
+    if currentRoom == 6 then
+        print("Congratulations! You found the treasure room and won the game!")
+        break
+    elseif currentRoom == 9 then
+        print("You attempted to attack the dragon but were defeated. Game over.")
+        break
+    elseif currentRoom == 10 then
+        print("You managed to sneak past the dragon and escape the cave! You win!")
+        break
+    elseif currentRoom == 16 then
+        print("The giant spider catches you in its web and devours you. Game over.")
+        break
+    elseif currentRoom == 17 then
+        print("You narrowly escape the spider's lair, shaken but alive.")
         break
     end
 end

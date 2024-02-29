@@ -10,7 +10,7 @@ The game consists of several rooms, each with its name, description, and availab
 1. **Run the Game**: Execute the Lua script using a Lua interpreter.
 
    ```bash
-   lua avanti.lua
+   lua main.lua
    ```
 
 2. **Navigate**: Read the room description and available options, then choose an option by entering its corresponding number.
